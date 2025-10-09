@@ -1,19 +1,16 @@
+// vite.config.ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import path from 'path'
+import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
-  base: '/reservas-hotel-agile/',
   plugins: [react()],
-  server: {
-    host: '0.0.0.0',
-    port: 8080,
-  },
+  base: '/reservas-hotel-agile/',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: { outDir: 'dist' },
 })
-
 

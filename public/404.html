@@ -1,0 +1,23 @@
+<!-- public/404.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <script>
+      // --- spa-github-pages (MIT) ---
+      (function(l) {
+        var redirect = '/reservas-hotel-agile/' + (l.search || '').replace(/^\?/, '') + (l.hash || '');
+        var path = l.pathname.replace(/^\/+/,'');
+        if (!path.startsWith('reservas-hotel-agile')) {
+          // Si usas dominio raíz, cambia la línea de arriba y 'redirect' a '/'
+        }
+        if (l.pathname !== '/' && !l.pathname.startsWith('/reservas-hotel-agile/')) {
+          redirect = '/reservas-hotel-agile/' + l.pathname.replace(/^\/+/,'') + (l.search || '') + (l.hash || '');
+        }
+        l.replace(redirect);
+      }(window.location));
+    </script>
+  </head>
+  <body>Redirecting…</body>
+</html>
